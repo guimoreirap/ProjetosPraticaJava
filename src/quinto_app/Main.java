@@ -31,12 +31,15 @@ public class Main {
 		worker.setBaseSalary(scanner.nextDouble());
 		System.out.println("How many contracts to this worker?");
 		contratos += scanner.nextInt();
+		
+		String data;
 
 		for (int i = 0; i < contratos; i++) {
 			HourContract contrato = new HourContract();
 			System.out.println("Enter contract #" + (i + 1) + " data:");
 			System.out.println("Date (DD/MM/YYYY): ");
-			String data = scanner.next();
+			data = null;
+			data = scanner.next();
 
 			try {
 				contrato.setData(formatter.parse(data));
@@ -55,17 +58,17 @@ public class Main {
 		}
 
 		System.out.println("Enter month and year to calculate income (MM/YYYY): ");
-		String data = scanner.next();
+		String dataIncome = scanner.next();
 
 		// Usar o método split para separar o mês e o ano
-		String[] partes = data.split("/");
+		String[] partes = dataIncome.split("/");
 
 		// Atribuir as partes a variáveis separadas
 		int mes = Integer.parseInt(partes[0]);
 		int ano = Integer.parseInt(partes[1]);
 
 		// Exibir os valores separados
-		System.out.println(worker.incomeToString(data, ano, mes, worker.getListaContratos()));
+		System.out.println(worker.incomeToString(dataIncome, ano, mes, worker.getListaContratos()));
 		
 
 	}
