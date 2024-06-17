@@ -5,9 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 public class Order {
-	private Date moment;
+	private Date moment = new Date();
 	private OrderStatus status;
 	private List<OrderItem> orderItens = new ArrayList<>();	
+	private Client client = new Client();
 	
 	public Order() {
 		
@@ -34,6 +35,14 @@ public class Order {
 		this.status = status;
 	}
 	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	public void addItem(OrderItem orderItem) {
 		this.orderItens.add(orderItem);
 	}
@@ -51,5 +60,29 @@ public class Order {
 		
 		return total;
 	}
+
+	@Override
+	public String toString() {
+		double totalPrice = 0.0;
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("Order moment:" + this.getMoment() + "\n");
+		sb.append("Order status: " + this.getStatus() + "\n");
+		
+		sb.append(this.getClient().toString());
+		for (OrderItem item: orderItens) {
+			sb.append("\nOrder items:\n " + item.getProduct().getName());
+			sb.append(", " + item.getProduct().getPrice());
+			sb.append(", Quantity: " + item.getQuantity());
+			sb.append(", Subtotal: " + item.subTotal());
+			totalPrice += item.subTotal();
+		}
+		
+		sb.append("\nTotal price: $" + totalPrice);
+		return sb.toString();
+		
+	}
+	
+	
 	
 }

@@ -40,5 +40,10 @@ public class Client {
 		this.birthDate = birthDate;
 	}
 
+	@Override
+	public String toString() {
+		return "Client: " + this.getName() + " " + this.getBirthDate() + " - " + this.getEmail();
+	}
+
 	
 }

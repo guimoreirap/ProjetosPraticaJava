@@ -3,7 +3,7 @@ package setimo_app;
 public class OrderItem {
 	private Integer quantity;
 	private Double price;
-	private Product product;
+	private Product product = new Product();
 	
 	public OrderItem() {
 	}
@@ -27,8 +27,8 @@ public class OrderItem {
 		this.price = price;
 	}
 	
-	public Double subTotal() {
-		return quantity * price;
+	public double subTotal() {
+		return quantity * getProduct().getPrice();
 	}
 
 	public Product getProduct() {
