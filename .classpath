@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="saque_conta_bancaria"/>
+	<classpathentry kind="src" path="files"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
