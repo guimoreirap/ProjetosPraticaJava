@@ -8,7 +8,7 @@ public class ProgramCriaFile {
 		String[] lines = new String[] {"Runescape", "Black Desert", "Guild Wars 2"}; 
 		String path = "C:\\Estudos\\games.txt";
 		
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))){
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))){
 			for (String line : lines) {
 				bw.write(line);
 				bw.newLine();
