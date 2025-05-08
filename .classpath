@@ -6,5 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="saque_conta_bancaria"/>
+	<classpathentry kind="src" path="files"/>
+	<classpathentry kind="src" path="pagamento_parcelas"/>
+	<classpathentry kind="src" path="programacao_funcional_lambda"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
