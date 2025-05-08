@@ -5,9 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import entities.Contract;
+import entities.Installment;
 import interfaces.OnlinePaymentService;
-import model.entities.Contract;
-import model.entities.Installment;
 
 public class ContractService {
 	
@@ -27,6 +27,7 @@ public class ContractService {
 			for (int i = 1; i <= months; i++) {
 				calendario.add(Calendar.MONTH, 1);
 				double amount = payment.totalValue(valorParcelasSemJuros, i);
+				
 				Installment installment = new Installment(calendario.getTime(), amount);
 				
 				parcelas.add(installment);

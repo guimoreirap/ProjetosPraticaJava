@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import model.entities.Contract;
-import model.entities.Installment;
+import entities.Contract;
+import entities.Installment;
 import services.ContractService;
 
 public class ProgramMain {
